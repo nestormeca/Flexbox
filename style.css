@@ -1,73 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap");
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #a1c3ff;
 }
 
-.flex-container {
-  height: 400px;
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2 {
+  margin-bottom: 15px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.navbar {
+  background: #3474e6;
+  color: #fff;
+  height: 60px;
+}
+
+.navbar .logo {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: lightblue;
+}
+
+.navbar .container {
   display: flex;
-  background-color: cadetblue;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
+  /*para que el contenedor se pueda aplicar el align-items se debe colocar el height 100% del contenedor padre;*/
 }
 
-.item {
-  flex: 1 0 0;
-  width: 100px;
-  height: 100px;
-  background: burlywood;
-  margin: 10px;
-  text-align: center;
+.navbar ul {
+  display: flex;
 }
 
-.item:nth-of-type(1) {
-  align-self: start;
+.navbar ul li {
+  margin-left: 20px;
 }
 
-.item:nth-of-type(2) {
+.header {
+  background-color: #0151cc;
+  color: #fff;
+  min-height: 400px;
 }
 
-.item:nth-of-type(3) {
-  align-self: end;
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
-/* 
-display: flex
-- justify-content: end, start, left, center, space-around, space-between
-trabaja en el main-axis de izquierda a derecha, simpre que este activo el flex-row el que trae por defecto el flex
-- aling-items>
-trabaja con el cross-axis de arriba para abajo
+.header img {
+  max-width: 400px;
+}
 
-flex-wrap: wrap
-- permite alinear de manera que no se te deformen los items, se van alinear de manera horizontal, si sobre pasan el border bajaran
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-order: 1 2 3
-se aplica a los hijos del contenedor para porder modificar su orden
+.boxes .container {
+  display: flex;
+  justify-content: space-between;
+}
 
-flex-basis: permite cambiar el tamano del item, se aplica directamente en el hijo
+.box {
+  flex: 1;
+  background: #0151cc;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+}
 
-flex-grow: permite cambiar el tamano del item, se aplica direcamente en el hijo, pero este ocupara el espacio disponible en el contenedor padre. se puede usar en conjunto con flex-basis para determinar el tamano iniciar del item. si solo se aplicar en el item general, establecera el tamano para todos por igual mientras se estire la pagina
+.box i {
+  margin-right: 10px;
+}
 
-flex-shrink: se establece a traves de posicionar el orden de cual va ser el primero y el segundo que se va ir escogiendo cuando la pagina se achique
-
-Atajo: Se pueden ocupar los 3 tipos de flex en un solo formar de flex en este orden grow shrink basis
-
-
-
-Pseudo-clase
-::nth-of-type selecciona uno o mas elementos de un tipo dado, en funcion de su posicion entre un grupo de hermanos
-
-flex-direction: colum
-las direccion del main y cross axis se rotan 45  grados a la izquierda
-el main-axis quedara ahora de arriba a abajo
-y el cross-axis de izquierda a derecha
-
-Para alinear el contenido como el TEXTO tambien puedes declarar los hijos con el display flex para aplicar los mismo para alinear los items contentivos
-
-
-*/
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  }
+  .boxes .container {
+    display: block;
+    text-align: center;
+  }
+}
