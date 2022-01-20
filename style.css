@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container {
+  height: 400px;
+  display: flex;
+  background-color: cadetblue;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item {
+  flex: 1 0 0;
+  width: 100px;
+  height: 100px;
+  background: burlywood;
+  margin: 10px;
+  text-align: center;
+}
+
+.item:nth-of-type(1) {
+  align-self: start;
+}
+
+.item:nth-of-type(2) {
+}
+
+.item:nth-of-type(3) {
+  align-self: end;
+}
+
+/* 
+display: flex
+- justify-content: end, start, left, center, space-around, space-between
+trabaja en el main-axis de izquierda a derecha, simpre que este activo el flex-row el que trae por defecto el flex
+- aling-items>
+trabaja con el cross-axis de arriba para abajo
+
+flex-wrap: wrap
+- permite alinear de manera que no se te deformen los items, se van alinear de manera horizontal, si sobre pasan el border bajaran
+
+order: 1 2 3
+se aplica a los hijos del contenedor para porder modificar su orden
+
+flex-basis: permite cambiar el tamano del item, se aplica directamente en el hijo
+
+flex-grow: permite cambiar el tamano del item, se aplica direcamente en el hijo, pero este ocupara el espacio disponible en el contenedor padre. se puede usar en conjunto con flex-basis para determinar el tamano iniciar del item. si solo se aplicar en el item general, establecera el tamano para todos por igual mientras se estire la pagina
+
+flex-shrink: se establece a traves de posicionar el orden de cual va ser el primero y el segundo que se va ir escogiendo cuando la pagina se achique
+
+Atajo: Se pueden ocupar los 3 tipos de flex en un solo formar de flex en este orden grow shrink basis
+
+
+
+Pseudo-clase
+::nth-of-type selecciona uno o mas elementos de un tipo dado, en funcion de su posicion entre un grupo de hermanos
+
+flex-direction: colum
+las direccion del main y cross axis se rotan 45  grados a la izquierda
+el main-axis quedara ahora de arriba a abajo
+y el cross-axis de izquierda a derecha
+
+Para alinear el contenido como el TEXTO tambien puedes declarar los hijos con el display flex para aplicar los mismo para alinear los items contentivos
+
+
+*/
